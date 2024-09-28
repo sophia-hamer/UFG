@@ -2,7 +2,7 @@ extends PlayerState
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	player.velocity.y = player.jump_impulse
-	#player.animation_player.play("jump")
+	player._animation_player.play("player_jump")
 
 func physics_update(delta: float) -> void:
 	var input_direction_x := Input.get_axis("game_left", "game_right")
