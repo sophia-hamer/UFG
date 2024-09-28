@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=43 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -14,9 +14,23 @@
 [ext_resource type="Texture2D" uid="uid://bvlbdxrk0fkj4" path="res://assets/player/animations/jump/jump3.png" id="12_mlmd2"]
 [ext_resource type="Texture2D" uid="uid://tw3q31cljyjo" path="res://assets/player/animations/jump/jump4.png" id="13_sinmp"]
 [ext_resource type="Texture2D" uid="uid://oj4l37jcvekb" path="res://assets/player/animations/jump/jump5.png" id="14_d2j6h"]
+[ext_resource type="Texture2D" uid="uid://dw65mvsmgxdhj" path="res://assets/player/animations/light_combo/punch1.png" id="15_ryetj"]
 [ext_resource type="Texture2D" uid="uid://cc5gnr7p36o7x" path="res://assets/player/animations/walk_forward/walk1.png" id="15_walfc"]
 [ext_resource type="Texture2D" uid="uid://33wv1yvww144" path="res://assets/player/animations/walk_forward/walk2.png" id="16_3367r"]
+[ext_resource type="Texture2D" uid="uid://u4wb6rdwlijh" path="res://assets/player/animations/light_combo/punch2.png" id="16_frtkc"]
+[ext_resource type="Texture2D" uid="uid://dgmcbhefun0e0" path="res://assets/player/animations/light_combo/punch3.png" id="17_5p1gk"]
 [ext_resource type="Texture2D" uid="uid://b77hh4ser3655" path="res://assets/player/animations/walk_forward/walk3.png" id="17_csy1p"]
+[ext_resource type="Texture2D" uid="uid://blexqkkcklho6" path="res://assets/player/animations/light_combo/punch4.png" id="18_oihrx"]
+[ext_resource type="Texture2D" uid="uid://b1lug11a1rng8" path="res://assets/player/animations/light_combo/lcombo1.png" id="19_a77ru"]
+[ext_resource type="Texture2D" uid="uid://fwhatvp6qnvd" path="res://assets/player/animations/light_combo/lcombo2.png" id="20_ijayn"]
+[ext_resource type="Texture2D" uid="uid://1lcm4lgqrx1u" path="res://assets/player/animations/light_combo/lcombo3.png" id="21_c8e88"]
+[ext_resource type="Texture2D" uid="uid://da2n7ovhwkhcc" path="res://assets/player/animations/light_combo/lcombo4.png" id="22_wo3hm"]
+[ext_resource type="Texture2D" uid="uid://da6m8qt1lxw1g" path="res://assets/player/animations/light_combo/lcombo5.png" id="23_bjsyq"]
+[ext_resource type="Texture2D" uid="uid://bn1mq3jd5jofs" path="res://assets/player/animations/light_combo/lcombo6.png" id="24_ocd1s"]
+[ext_resource type="Texture2D" uid="uid://dn7q6wqkbou7r" path="res://assets/player/animations/light_combo/lcombo7.png" id="25_ern23"]
+[ext_resource type="Texture2D" uid="uid://18omp3jjsrvx" path="res://assets/player/animations/light_combo/lcombo8.png" id="26_hfyr4"]
+[ext_resource type="Texture2D" uid="uid://dlbvsm71s80ec" path="res://assets/player/animations/light_combo/lcombo9.png" id="27_5dgmy"]
+[ext_resource type="Texture2D" uid="uid://cw3xi82xwk2fg" path="res://assets/player/animations/light_combo/lcombo10.png" id="28_utvv4"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_eabpd"]
 
@@ -34,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [&"default"]
+"values": [&"player_light_combo"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -168,11 +182,131 @@ tracks/2/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_kcy2n"]
+resource_name = "player_light_1"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-3.72529e-09, 0.0833333, 0.116667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_light_1"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_vf50t"]
+resource_name = "player_light_2"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.216667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_light_2"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_1o152"]
+resource_name = "player_light_3"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.183333, 0.316667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_light_3"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t8h1h"]
 _data = {
 "RESET": SubResource("Animation_vy00k"),
 "player_idle": SubResource("Animation_asxag"),
 "player_jump": SubResource("Animation_swl46"),
+"player_light_1": SubResource("Animation_kcy2n"),
+"player_light_2": SubResource("Animation_vf50t"),
+"player_light_3": SubResource("Animation_1o152"),
 "player_walk_forward": SubResource("Animation_ugt5h")
 }
 
@@ -210,6 +344,63 @@ animations = [{
 }],
 "loop": true,
 "name": &"player_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ryetj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_frtkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5p1gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oihrx")
+}],
+"loop": true,
+"name": &"player_light_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_a77ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ijayn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_c8e88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wo3hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bjsyq")
+}],
+"loop": true,
+"name": &"player_light_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_ocd1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ern23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hfyr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5dgmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_utvv4")
+}],
+"loop": true,
+"name": &"player_light_3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -266,4 +457,5 @@ centered = false
 offset = Vector2(-540, 0)
 pixel_size = 0.0013
 sprite_frames = SubResource("SpriteFrames_ideqm")
+animation = &"player_light_combo"
 frame = 2
