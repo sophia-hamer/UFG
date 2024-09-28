@@ -1,0 +1,152 @@
+[gd_scene load_steps=17 format=3 uid="uid://ci6tcdtnvfkkl"]
+
+[ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
+[ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
+[ext_resource type="Script" path="res://player/player_states/idle.gd" id="2_ae74q"]
+[ext_resource type="Script" path="res://player/player_states/running.gd" id="3_ebxee"]
+[ext_resource type="Script" path="res://player/player_states/jumping.gd" id="4_wrfl3"]
+[ext_resource type="Script" path="res://player/player_states/falling.gd" id="5_cjid2"]
+[ext_resource type="Texture2D" uid="uid://cthaafrkcgsox" path="res://icon.svg" id="7_gsjof"]
+[ext_resource type="Texture2D" uid="uid://2384shpr1110" path="res://assets/player/animations/idle/idle1.png" id="7_t6ig1"]
+[ext_resource type="Texture2D" uid="uid://cps0gut6g5rnm" path="res://assets/player/animations/idle/idle2.png" id="8_yy04r"]
+[ext_resource type="Texture2D" uid="uid://da5bepcbwbo2b" path="res://assets/player/animations/idle/idle3.png" id="9_acujg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eabpd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c4dc4"]
+
+[sub_resource type="Animation" id="Animation_asxag"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="Animation" id="Animation_vy00k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8h1h"]
+_data = {
+"RESET": SubResource("Animation_vy00k"),
+"idle": SubResource("Animation_asxag")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ideqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gsjof")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_t6ig1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy04r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_acujg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_w7i0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_eabpd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_c4dc4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_tte72")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_ae74q")
+
+[node name="Running" type="Node" parent="StateMachine"]
+script = ExtResource("3_ebxee")
+
+[node name="Jumping" type="Node" parent="StateMachine"]
+script = ExtResource("4_wrfl3")
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("5_cjid2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t8h1h")
+}
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.0013
+sprite_frames = SubResource("SpriteFrames_ideqm")
+frame = 2

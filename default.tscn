@@ -1,10 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnraopur1wspg"]
+[gd_scene load_steps=4 format=3 uid="uid://cnraopur1wspg"]
 
-[ext_resource type="Script" path="res://player_script.gd" id="1_oalrm"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_eabpd"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_c4dc4"]
+[ext_resource type="PackedScene" uid="uid://ci6tcdtnvfkkl" path="res://player.tscn" id="1_hwf7o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g6fdi"]
 size = Vector3(25, 1, 25)
@@ -18,18 +14,6 @@ size = Vector3(25, 1, 25)
 transform = Transform3D(0.500003, -0.749999, 0.43301, -1.49013e-08, 0.499998, 0.866027, -0.866023, -0.433016, 0.250001, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_oalrm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CylinderShape3D_eabpd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-mesh = SubResource("CylinderMesh_c4dc4")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
@@ -38,3 +22,5 @@ shape = SubResource("BoxShape3D_g6fdi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_0c6ia")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_hwf7o")]
