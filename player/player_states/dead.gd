@@ -3,8 +3,19 @@ extends PlayerState
 @onready var despawn_timer := Timer.new()
 
 func _please() -> void:
-	print("WHY")
-	player.queue_free()
+	if player.is_ai:
+		var newguy1 := preload("res://player.tscn").instantiate()
+		var newguy2 := preload("res://player.tscn").instantiate()
+		var rng := RandomNumberGenerator.new()
+		newguy1.position=(Vector3(rng.randf_range(-20,20),10,rng.randf_range(-20,20)))
+		newguy2.position=(Vector3(rng.randf_range(-20,20),10,rng.randf_range(-20,20)))
+		newguy1.set_name("badguy")
+		newguy2.set_name("badguy")
+		newguy1.is_ai = true
+		newguy2.is_ai = true
+		get_tree().current_scene.add_child(newguy1)
+		get_tree().current_scene.add_child(newguy2)
+		player.queue_free()
 
 func _ready() -> void:
 	await owner.ready
@@ -29,6 +40,11 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 		#player.facing_direction = 0
 	player._animation_player.play("player_dead")
 	player._animation_player.seek(0.01,true)
+	
+	if player.is_ai:
+		var other := get_node("../../../Real") as Player
+		other.HP += 1
+		other._health_bar.value = other.HP
 
 func update(_delta: float) -> void:
 	if player.facing_direction as bool:

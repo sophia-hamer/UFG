@@ -3,6 +3,12 @@ extends PlayerState
 func exit() -> void:
 	player._animation_player.speed_scale = 1.0
 
+func handle_input(_event: InputEvent) -> void:
+	if _event.is_action_pressed("game_slide"):
+		player.buffered_attack = "game_slide"
+		if not player.lock_buffer:
+			finished.emit(SLIDE)
+			
 func enter(_previous_state_path: String, _data := {'hitstun': 1.0}) -> void:
 	player._hitbox_manager._clear_hitboxes()
 	player.velocity = Vector3(0,0,0)
@@ -16,6 +22,9 @@ func enter(_previous_state_path: String, _data := {'hitstun': 1.0}) -> void:
 	player._animation_player.seek(0.01,true)
 
 func update(_delta: float) -> void:
+	if not player.lock_buffer and player.buffered_attack=="game_slide":
+		player.lock_buffer = true
+		finished.emit(SLIDE)
 	if player.facing_direction as bool:
 		player._animated_sprite.set_rotation_degrees(Vector3(0,-180,0))
 	else:

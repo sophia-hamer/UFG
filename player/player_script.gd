@@ -2,8 +2,8 @@ class_name Player extends CharacterBody3D
 
 @export var is_ai := false
 
-@export var speed := 3
-@export var speed_z := 3
+@export var speed := 3.0
+@export var speed_z := 3.0
 @export var slide_speed := 10.0
 @export var hurt_speed := 1.0
 @export var big_hurt_speed := 2.0
@@ -31,6 +31,12 @@ class_name Player extends CharacterBody3D
 @onready var _hitstop_manager := $HitstopManager
 @warning_ignore("UNUSED_PRIVATE_CLASS_VARIABLE")
 @onready var _hurtbox := $Hurtbox
+#@warning_ignore("UNUSED_PRIVATE_CLASS_VARIABLE")
+#@onready var _walking_audio := $walkingAudio
+#@warning_ignore("UNUSED_PRIVATE_CLASS_VARIABLE")
+#@onready var _jump_audio := $jumpAudio
+@warning_ignore("UNUSED_PRIVATE_CLASS_VARIABLE")
+@onready var _health_bar := $ProgressBar
 
 @onready var default_sprite_pos := _animated_sprite.position as Vector3
 @onready var input_axis_x := 0.0

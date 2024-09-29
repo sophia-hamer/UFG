@@ -9,12 +9,16 @@ class_name StateMachine extends Node
 
 # Called on spawn
 func _ready() -> void:
+	await owner.ready
 	for state_node: State in find_children("*", "State"):
 		state_node.finished.connect(_transition_to_next_state)
-
-	await owner.ready
+	player = owner as Player
 	state.enter("")
-
+	if player.is_ai:
+		player._health_bar.visible = false
+	else:
+		player._health_bar.value = player.HP
+	
 # Called when input
 func _unhandled_input(event: InputEvent) -> void:
 	if player.is_ai:
@@ -32,9 +36,35 @@ func _unhandled_input(event: InputEvent) -> void:
 # Called every frame
 func _process(delta: float) -> void:
 	var thing := InputEventAction.new()
-	thing.action = "game_attack2"
+	thing.action = ""
+	if RandomNumberGenerator.new().randi()%357==0:
+		thing.action = "game_attack2"
+	if RandomNumberGenerator.new().randi()%101==0:
+		thing.action = "game_attack1"
 	thing.pressed = true
 	if player.is_ai:
+		var other := get_node("../../Real") as Player
+		var diff := (other.position - (player.position + Vector3(-1,0,0)))
+		var diff2 := (other.position - (player.position + Vector3(1,0,0)))
+		if(diff2.length()<diff.length()):
+			diff = diff2
+		if abs(diff.x)<=0.25 and abs(diff.z)<=0.25:
+			if player.position.x >= other.position.x:
+				player.facing_direction = 1
+				player.input_axis_x = -1
+			else:
+				player.facing_direction = 0
+				
+				
+			if player.facing_direction as bool:
+				player._animated_sprite.set_rotation_degrees(Vector3(0,-180,0))
+			else:
+				player._animated_sprite.set_rotation_degrees(Vector3(0,0,0))
+				
+			state.handle_input(thing)
+		else:
+			player.input_axis_x = diff.normalized().x
+			player.input_axis_z = diff.normalized().z
 		pass
 		#state.handle_input(thing)
 	state.update(delta)
@@ -71,7 +101,10 @@ func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_inde
 		player.facing_direction = 1
 		if other.position.x>player.position.x:
 			player.facing_direction = 0
+
 		player.HP -= hitbox.data['damage']
+		player._health_bar.value = player.HP
+		
 		print(hitbox.data['damage'])
 		print(player.HP)
 		var killed := 1

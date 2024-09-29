@@ -16,7 +16,7 @@ func _initialize(bounding_box: AABB, player: Player, _hitbox_name: String) -> vo
 	collision_shape.set_shape(collision_box)
 	self.add_child(collision_shape)
 	
-	var last_transform := Transform3D(Basis.from_scale(Vector3(1,1,1)), (bounding_box.position+bounding_box.size*Vector3(0.5,0.5,0.5))*scale_factor)
+	var last_transform := Transform3D(Basis.from_scale(Vector3(1,1,2)), (bounding_box.position+bounding_box.size*Vector3(0.5,0.5,0.5))*scale_factor)
 	#collision_shape.set_transform(  player.transform*last_transform  )
 	collision_shape.set_transform(  last_transform  )
 

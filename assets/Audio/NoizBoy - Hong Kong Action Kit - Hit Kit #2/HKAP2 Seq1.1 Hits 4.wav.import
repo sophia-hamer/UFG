@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://biwm27wqagnhr"
+path="res://.godot/imported/HKAP2 Seq1.1 Hits 4.wav-bc2cab37f00b86f1bb44a5ebf277289a.sample"
+
+[deps]
+
+source_file="res://assets/Audio/NoizBoy - Hong Kong Action Kit - Hit Kit #2/HKAP2 Seq1.1 Hits 4.wav"
+dest_files=["res://.godot/imported/HKAP2 Seq1.1 Hits 4.wav-bc2cab37f00b86f1bb44a5ebf277289a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

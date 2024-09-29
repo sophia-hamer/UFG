@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtacon2k1v84t"
+path="res://.godot/imported/FOOTSTEP - Metal Grill Run Barefoot Male - 21.wav-09341f885c18aa6a8d97191591f56835.sample"
+
+[deps]
+
+source_file="res://assets/Audio/FOOTSTEP - Metal Grill Run Barefoot Male - 21.wav"
+dest_files=["res://.godot/imported/FOOTSTEP - Metal Grill Run Barefoot Male - 21.wav-09341f885c18aa6a8d97191591f56835.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=33006.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
