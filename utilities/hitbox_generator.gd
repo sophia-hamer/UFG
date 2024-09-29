@@ -16,7 +16,7 @@ func _run():
 	var jsontest := JSON.new()
 	jsontest.parse(json_string)
 	parse_AABB(jsontest.data['hitboxes'][0])
-	#print("SDF")
+	print("SDF")
 	#print(get_scene())
 	# `parent` could be any node in the scene.
 	var designer = get_scene().get_node('HitboxDesigner')
@@ -25,15 +25,20 @@ func _run():
 	boxes['hitboxes'] = []
 	boxes['hurtboxes'] = []
 	
+	var n_hitboxes := 0
+	var n_hurtboxes := 0
+	
 	for i in designer.get_children():
 		var what := i as CollisionShape3D
 		var shape := what.get_shape() as BoxShape3D
 		var bounds := AABB(what.position-Vector3(0.5,0.5,0)*shape.size, shape.size)
 		print(bounds)
 		if what.name.containsn("Hitbox"):
-			boxes['hitboxes'].append(var_to_str(bounds))
+			boxes['hitboxes'].append({"id": n_hitboxes, "aabb": var_to_str(bounds), "damage":1, "hitstop": 0.75, "hitstun": 0.5})
+			n_hitboxes += 1
 		if what.name.containsn("Hurtbox"):
-			boxes['hitboxes'].append(var_to_str(bounds))
+			boxes['hitboxes'].append({"id": n_hurtboxes, "aabb": var_to_str(bounds)})
+			n_hurtboxes += 1
 	print(JSON.stringify(boxes))
 	#var node = Node3D.new()
 	#parent.add_child(node)

@@ -18,5 +18,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_3d_area_shape_entered(_area_rid: RID, _area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
-	queue_free()
+	var player := _area.get_parent_node_3d() as Player
+	var area := _area as Hitbox
+	if player and area:
+		player._hitstop_manager.set_hitstop(area.data['hitstop'])
+	#queue_free()
 	pass # Replace with function body.

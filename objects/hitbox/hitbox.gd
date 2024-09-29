@@ -1,5 +1,7 @@
 class_name Hitbox extends Area3D
 
+var data := {"aabb":"AABB(0, 0, 0, 1, 1, 1))","damage":1,"hitstop":0.75,"hitstun":0.5,"id":0}
+
 func _initialize(bounding_box: AABB, player: Player, _hitbox_name: String) -> void:
 	
 	var scale_factor := Vector3(1,1,1)
@@ -15,7 +17,8 @@ func _initialize(bounding_box: AABB, player: Player, _hitbox_name: String) -> vo
 	self.add_child(collision_shape)
 	
 	var last_transform := Transform3D(Basis.from_scale(Vector3(1,1,1)), (bounding_box.position+bounding_box.size*Vector3(0.5,0.5,0.5))*scale_factor)
-	collision_shape.set_transform(  player.transform*last_transform  )
+	#collision_shape.set_transform(  player.transform*last_transform  )
+	collision_shape.set_transform(  last_transform  )
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

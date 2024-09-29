@@ -1,9 +1,9 @@
-extends Node
+class_name HitboxManager extends Node
 
 var parent_player : Player
 
 func _clear_hitboxes() -> void:
-	for i in get_children():
+	for i in parent_player.get_children():
 		if i is Hitbox:
 			i.queue_free()
 	
@@ -14,13 +14,13 @@ func _spawn_hitboxes(data: String) -> void:
 		return
 	var jsontest := JSON.new()
 	jsontest.parse(data)
-	
 	for i in range(len(jsontest.data['hitboxes'])):
-		var bounding_box := str_to_var(jsontest.data['hitboxes'][i]) as AABB
+		var bounding_box := str_to_var(jsontest.data['hitboxes'][i]['aabb']) as AABB
 		var hitbox = Hitbox.new()
 		hitbox.name = str(i)
+		hitbox.data = jsontest.data['hitboxes'][i]
 		hitbox._initialize(bounding_box, parent_player, str(i))
-		add_child(hitbox)
+		parent_player.add_child(hitbox)
 		pass
 	
 	pass
