@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=76 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -6,38 +6,60 @@
 [ext_resource type="Script" path="res://player/player_states/running.gd" id="3_ebxee"]
 [ext_resource type="Script" path="res://player/player_states/jumping.gd" id="4_wrfl3"]
 [ext_resource type="Script" path="res://player/player_states/falling.gd" id="5_cjid2"]
+[ext_resource type="Texture2D" uid="uid://um4yrw85kfvq" path="res://assets/player/animations/heavy_combo/ora1.png" id="7_0n8o3"]
 [ext_resource type="Texture2D" uid="uid://ctd1ip8hrnrd" path="res://assets/player/animations/heavy_combo/heavy1.png" id="7_jpygi"]
 [ext_resource type="Texture2D" uid="uid://2384shpr1110" path="res://assets/player/animations/idle/idle1.png" id="7_t6ig1"]
+[ext_resource type="Texture2D" uid="uid://8t44qym2flkl" path="res://assets/player/animations/heavy_combo/ora2.png" id="8_68j45"]
 [ext_resource type="Texture2D" uid="uid://btosq5qpyrl8n" path="res://assets/player/animations/heavy_combo/heavy2.png" id="8_wbtdt"]
 [ext_resource type="Texture2D" uid="uid://cps0gut6g5rnm" path="res://assets/player/animations/idle/idle2.png" id="8_yy04r"]
 [ext_resource type="Texture2D" uid="uid://dajmnwfl1hh8o" path="res://assets/player/animations/heavy_combo/heavy3.png" id="9_1rt5w"]
+[ext_resource type="Texture2D" uid="uid://b0yo4kn78c37g" path="res://assets/player/animations/heavy_combo/ora3.png" id="9_7ptdr"]
 [ext_resource type="Texture2D" uid="uid://da5bepcbwbo2b" path="res://assets/player/animations/idle/idle3.png" id="9_acujg"]
 [ext_resource type="Texture2D" uid="uid://c71o6d2l0w1yj" path="res://assets/player/animations/jump/jump1.png" id="10_71bwp"]
 [ext_resource type="Texture2D" uid="uid://ob1gtlb5xblg" path="res://assets/player/animations/heavy_combo/heavy4.png" id="10_j4vav"]
+[ext_resource type="Texture2D" uid="uid://cyecebvfwoue6" path="res://assets/player/animations/heavy_combo/ora4.png" id="10_x1n3a"]
 [ext_resource type="Texture2D" uid="uid://c5q8q00yq2g2a" path="res://assets/player/animations/jump/jump2.png" id="11_ckmys"]
+[ext_resource type="Texture2D" uid="uid://ggcr7pwkf1cv" path="res://assets/player/animations/heavy_combo/ora5.png" id="11_dhbp5"]
 [ext_resource type="Texture2D" uid="uid://drlr3ghgde7wa" path="res://assets/player/animations/heavy_combo/heavy5.png" id="11_sus1x"]
 [ext_resource type="Texture2D" uid="uid://bvlbdxrk0fkj4" path="res://assets/player/animations/jump/jump3.png" id="12_mlmd2"]
 [ext_resource type="Texture2D" uid="uid://c77fldskp5r2o" path="res://assets/player/animations/heavy_combo/heavy6.png" id="12_ttfid"]
-[ext_resource type="Texture2D" uid="uid://dwuj7qhvvjkwd" path="res://assets/player/animations/heavy_combo/heavy7.png" id="13_532qd"]
+[ext_resource type="Texture2D" uid="uid://bdmcjqoohk5a" path="res://assets/player/animations/heavy_combo/heavy7 (1).png" id="13_5erjv"]
 [ext_resource type="Texture2D" uid="uid://tw3q31cljyjo" path="res://assets/player/animations/jump/jump4.png" id="13_sinmp"]
 [ext_resource type="Texture2D" uid="uid://oj4l37jcvekb" path="res://assets/player/animations/jump/jump5.png" id="14_d2j6h"]
+[ext_resource type="Texture2D" uid="uid://dywvlrw54sb8v" path="res://assets/player/animations/heavy_combo/heavy9.png" id="14_pouow"]
+[ext_resource type="Texture2D" uid="uid://5p5jyf7ny4iq" path="res://assets/player/animations/heavy_combo/heavy8 (1).png" id="14_qw6dc"]
+[ext_resource type="Texture2D" uid="uid://b3wqywg3usci5" path="res://assets/player/animations/heavy_combo/heavy10.png" id="15_nb5ja"]
 [ext_resource type="Texture2D" uid="uid://dw65mvsmgxdhj" path="res://assets/player/animations/light_combo/punch1.png" id="15_ryetj"]
 [ext_resource type="Texture2D" uid="uid://cc5gnr7p36o7x" path="res://assets/player/animations/walk_forward/walk1.png" id="15_walfc"]
 [ext_resource type="Texture2D" uid="uid://33wv1yvww144" path="res://assets/player/animations/walk_forward/walk2.png" id="16_3367r"]
+[ext_resource type="Texture2D" uid="uid://c8g87c5vixek7" path="res://assets/player/animations/heavy_combo/heavy11.png" id="16_dj81i"]
 [ext_resource type="Texture2D" uid="uid://u4wb6rdwlijh" path="res://assets/player/animations/light_combo/punch2.png" id="16_frtkc"]
 [ext_resource type="Texture2D" uid="uid://dgmcbhefun0e0" path="res://assets/player/animations/light_combo/punch3.png" id="17_5p1gk"]
 [ext_resource type="Texture2D" uid="uid://b77hh4ser3655" path="res://assets/player/animations/walk_forward/walk3.png" id="17_csy1p"]
+[ext_resource type="Texture2D" uid="uid://dn7vclj4gal7l" path="res://assets/player/animations/heavy_combo/heavy12.png" id="18_mmss2"]
 [ext_resource type="Texture2D" uid="uid://blexqkkcklho6" path="res://assets/player/animations/light_combo/punch4.png" id="18_oihrx"]
+[ext_resource type="Texture2D" uid="uid://8uuod3sl3e5l" path="res://assets/player/animations/heavy_combo/heavy13.png" id="19_7fdsq"]
 [ext_resource type="Texture2D" uid="uid://b1lug11a1rng8" path="res://assets/player/animations/light_combo/lcombo1.png" id="19_a77ru"]
+[ext_resource type="Texture2D" uid="uid://ymmhvburqwvd" path="res://assets/player/animations/heavy_combo/heavy14.png" id="20_64de2"]
 [ext_resource type="Texture2D" uid="uid://fwhatvp6qnvd" path="res://assets/player/animations/light_combo/lcombo2.png" id="20_ijayn"]
 [ext_resource type="Texture2D" uid="uid://1lcm4lgqrx1u" path="res://assets/player/animations/light_combo/lcombo3.png" id="21_c8e88"]
+[ext_resource type="Texture2D" uid="uid://dwsklcg2rotti" path="res://assets/player/animations/heavy_combo/heavy15.png" id="21_kyvdc"]
+[ext_resource type="Texture2D" uid="uid://vj3e66gnv8ww" path="res://assets/player/animations/heavy_combo/heavy16.png" id="22_l04r3"]
 [ext_resource type="Texture2D" uid="uid://da2n7ovhwkhcc" path="res://assets/player/animations/light_combo/lcombo4.png" id="22_wo3hm"]
+[ext_resource type="Texture2D" uid="uid://blmhch4x1dnt8" path="res://assets/player/animations/heavy_combo/heavy17.png" id="23_84s78"]
 [ext_resource type="Texture2D" uid="uid://da6m8qt1lxw1g" path="res://assets/player/animations/light_combo/lcombo5.png" id="23_bjsyq"]
+[ext_resource type="Texture2D" uid="uid://fbqrmnlrvw6a" path="res://assets/player/animations/heavy_combo/heavy18.png" id="24_dkhe1"]
 [ext_resource type="Texture2D" uid="uid://bn1mq3jd5jofs" path="res://assets/player/animations/light_combo/lcombo6.png" id="24_ocd1s"]
 [ext_resource type="Texture2D" uid="uid://dn7q6wqkbou7r" path="res://assets/player/animations/light_combo/lcombo7.png" id="25_ern23"]
+[ext_resource type="Texture2D" uid="uid://dw2ktpdk8g5eh" path="res://assets/player/animations/heavy_combo/heavy19.png" id="25_oaba3"]
 [ext_resource type="Texture2D" uid="uid://18omp3jjsrvx" path="res://assets/player/animations/light_combo/lcombo8.png" id="26_hfyr4"]
+[ext_resource type="Texture2D" uid="uid://2gri4nod36x1" path="res://assets/player/animations/heavy_combo/heavy20.png" id="26_iqli3"]
 [ext_resource type="Texture2D" uid="uid://dlbvsm71s80ec" path="res://assets/player/animations/light_combo/lcombo9.png" id="27_5dgmy"]
+[ext_resource type="Texture2D" uid="uid://bccr8vhpr0j28" path="res://assets/player/animations/heavy_combo/heavy21.png" id="27_qpdvf"]
+[ext_resource type="Texture2D" uid="uid://c07fyqafnrdgh" path="res://assets/player/animations/heavy_combo/heavy22.png" id="28_h7ae4"]
 [ext_resource type="Texture2D" uid="uid://cw3xi82xwk2fg" path="res://assets/player/animations/light_combo/lcombo10.png" id="28_utvv4"]
+[ext_resource type="Texture2D" uid="uid://b45p4ssgukswl" path="res://assets/player/animations/heavy_combo/heavy23.png" id="29_hjpmv"]
+[ext_resource type="Texture2D" uid="uid://w5qk5fx2jacr" path="res://assets/player/animations/heavy_combo/heavy24.png" id="30_66udu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_eabpd"]
 
@@ -48,43 +70,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [&"player_light_combo"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_asxag"]
-resource_name = "player_idle"
-loop_mode = 1
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatedSprite3D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0, 1, 2]
+"values": [2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -96,7 +89,75 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [&"player_light_combo"]
+}
+
+[sub_resource type="Animation" id="Animation_gkjml"]
+resource_name = "player_heavy_1"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_heavy_1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.566667, 0.583333, 0.883333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 6]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_asxag"]
+resource_name = "player_idle"
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [&"player_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -116,26 +177,26 @@ step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.183333, 0.35, 0.483333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"player_jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.183333, 0.35, 0.483333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -155,26 +216,26 @@ step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-3.72529e-09, 0.0833333, 0.116667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"player_light_1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.72529e-09, 0.0833333, 0.116667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -194,26 +255,26 @@ step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.216667, 0.333333, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"player_light_2"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.216667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -233,26 +294,26 @@ step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.183333, 0.316667, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"player_light_3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.183333, 0.316667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -273,26 +334,26 @@ step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"player_walk_forward"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -306,32 +367,112 @@ tracks/2/keys = {
 "values": []
 }
 
-[sub_resource type="Animation" id="Animation_gkjml"]
-resource_name = "player_heavy_1"
+[sub_resource type="Animation" id="Animation_ie164"]
+resource_name = "player_heavy_2"
 step = 0.0167
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.566667, 0.583333, 0.883333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0, 1, 2, 3, 4, 6]
+"values": [&"player_heavy_2"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0.0166667, 0.1, 0.25, 0.633333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_cjn07"]
+resource_name = "player_heavy_3"
+length = 2.0
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [&"player_heavy_1"]
+"values": [&"player_heavy_3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0166667, 0.0833333, 0.501042, 0.616667, 0.733333, 0.85, 0.966667, 1.16667, 1.26667, 1.36667, 1.76667, 1.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_il733"]
+resource_name = "heavy_3_fists"
+length = 2.0
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"heavy_3_fists"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.501042, 0.616667, 0.733333, 0.85, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 5]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -348,7 +489,10 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t8h1h"]
 _data = {
 "RESET": SubResource("Animation_vy00k"),
+"heavy_3_fists": SubResource("Animation_il733"),
 "player_heavy_1": SubResource("Animation_gkjml"),
+"player_heavy_2": SubResource("Animation_ie164"),
+"player_heavy_3": SubResource("Animation_cjn07"),
 "player_idle": SubResource("Animation_asxag"),
 "player_jump": SubResource("Animation_swl46"),
 "player_light_1": SubResource("Animation_kcy2n"),
@@ -359,6 +503,26 @@ _data = {
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ideqm"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0n8o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_68j45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ptdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x1n3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dhbp5")
+}],
+"loop": true,
+"name": &"heavy_3_fists",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_jpygi")
@@ -379,10 +543,71 @@ animations = [{
 "texture": ExtResource("12_ttfid")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_532qd")
+"texture": ExtResource("13_5erjv")
 }],
 "loop": true,
 "name": &"player_heavy_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qw6dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pouow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nb5ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dj81i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mmss2")
+}],
+"loop": true,
+"name": &"player_heavy_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_7fdsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_64de2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kyvdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l04r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_84s78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dkhe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_oaba3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iqli3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qpdvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_h7ae4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hjpmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_66udu")
+}],
+"loop": true,
+"name": &"player_heavy_3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -531,4 +756,3 @@ offset = Vector2(-540, 0)
 pixel_size = 0.0013
 sprite_frames = SubResource("SpriteFrames_ideqm")
 animation = &"player_light_combo"
-frame = 2

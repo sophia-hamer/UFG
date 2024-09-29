@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq5alhani5x7e"
-path.s3tc="res://.godot/imported/heavy8.png-64b0be00a29df791b5f175e1b48b7ddc.s3tc.ctex"
+uid="uid://bdmcjqoohk5a"
+path.s3tc="res://.godot/imported/heavy7 (1).png-4aca23215495c3280fc41548a49f111b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/player/animations/heavy_combo/heavy8.png"
-dest_files=["res://.godot/imported/heavy8.png-64b0be00a29df791b5f175e1b48b7ddc.s3tc.ctex"]
+source_file="res://assets/player/animations/heavy_combo/heavy7 (1).png"
+dest_files=["res://.godot/imported/heavy7 (1).png-4aca23215495c3280fc41548a49f111b.s3tc.ctex"]
 
 [params]
 
