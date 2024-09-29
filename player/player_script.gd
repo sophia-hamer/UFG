@@ -10,3 +10,5 @@ class_name Player extends CharacterBody3D
 @onready var _animated_sprite = $AnimatedSprite3D
 @warning_ignore("UNUSED_PRIVATE_CLASS_VARIABLE")
 @onready var _animation_player := $AnimationPlayer
+@onready var _walking_audio := $walkingAudio
+@onready var _jump_audio := $jumpAudio

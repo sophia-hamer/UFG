@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=22 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dv6wfujiaf8kh" path="res://assets/player/animations/walk_forward/walkf1.png" id="10_c2efj"]
 [ext_resource type="Texture2D" uid="uid://r17qspbsthcj" path="res://assets/player/animations/walk_forward/walkf2.png" id="11_ubrdt"]
 [ext_resource type="Texture2D" uid="uid://jjimwku7o3ay" path="res://assets/player/animations/walk_forward/walkf3.png" id="12_7yt0b"]
+[ext_resource type="AudioStream" uid="uid://bgpcfbw4g1gc0" path="res://assets/Audio/FOOTSTEP - Metal Board Walk Barefoot Male - 2.wav" id="13_m3cws"]
+[ext_resource type="AudioStream" uid="uid://bmnnn4hwwuxyg" path="res://assets/Audio/FOOTSTEP - Metal Board Jump Barefoot Male - 11.wav" id="14_rvvp1"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_eabpd"]
 
@@ -201,3 +203,14 @@ centered = false
 offset = Vector2(-540, 0)
 pixel_size = 0.0013
 sprite_frames = SubResource("SpriteFrames_ideqm")
+
+[node name="walkingAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_m3cws")
+volume_db = 0.031
+max_db = -2.139
+pitch_scale = 1.01
+
+[node name="jumpAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("14_rvvp1")
+max_db = 1.605
+pitch_scale = 0.85
