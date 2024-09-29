@@ -43,7 +43,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	
 	if player.is_ai:
 		var other := get_node("../../../Real") as Player
-		other.HP += 1
+		other.HP = min(other.HP+1,other.HP_max)
 		other._health_bar.value = other.HP
 
 func update(_delta: float) -> void:
