@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://boa6ht5y2ur8x"
+path="res://.godot/imported/HKAP2 Spin Hit 1a.wav-89a8978e491647a981f8809b75ea4edd.sample"
+
+[deps]
+
+source_file="res://assets/Audio/NoizBoy - Hong Kong Action Kit - Hit Kit #2/HKAP2 Spin Hit 1a.wav"
+dest_files=["res://.godot/imported/HKAP2 Spin Hit 1a.wav-89a8978e491647a981f8809b75ea4edd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

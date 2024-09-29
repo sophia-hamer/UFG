@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmnnn4hwwuxyg"
+path="res://.godot/imported/FOOTSTEP - Metal Board Jump Barefoot Male - 11.wav-ba46ab7ea6ae927314076f946516c860.sample"
+
+[deps]
+
+source_file="res://assets/Audio/FOOTSTEP - Metal Board Jump Barefoot Male - 11.wav"
+dest_files=["res://.godot/imported/FOOTSTEP - Metal Board Jump Barefoot Male - 11.wav-ba46ab7ea6ae927314076f946516c860.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
