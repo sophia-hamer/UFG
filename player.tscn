@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=24 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -164,6 +164,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygcjy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qud66"]
+bg_color = Color(0, 0.579428, 0.16951, 1)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_w7i0i")
 
@@ -214,3 +220,13 @@ pitch_scale = 1.01
 stream = ExtResource("14_rvvp1")
 max_db = 1.605
 pitch_scale = 0.85
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 129.0
+offset_bottom = 26.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ygcjy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qud66")
+value = 100.0
+show_percentage = false
