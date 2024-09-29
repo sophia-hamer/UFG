@@ -16,5 +16,7 @@ func physics_update(_delta: float) -> void:
 		finished.emit(FALLING)
 	elif Input.is_action_just_pressed("game_jump"):
 		finished.emit(JUMPING)
+	elif Input.is_action_just_pressed("game_attack1"):
+		finished.emit(ATTACK_TEST)
 	elif Input.is_action_pressed("game_left") or Input.is_action_pressed("game_right"):
 		finished.emit(RUNNING)
