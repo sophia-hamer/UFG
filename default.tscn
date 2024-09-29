@@ -1,7 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnraopur1wspg"]
+[gd_scene load_steps=11 format=3 uid="uid://cnraopur1wspg"]
 
 [ext_resource type="PackedScene" uid="uid://ci6tcdtnvfkkl" path="res://player.tscn" id="1_hwf7o"]
 [ext_resource type="PackedScene" uid="uid://b5mfm0gpmoxr4" path="res://objects/breakable_box/breakable_box.tscn" id="2_0dyt5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_me3qv"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xou4o"]
+sky_material = SubResource("ProceduralSkyMaterial_me3qv")
+
+[sub_resource type="Environment" id="Environment_t5k8k"]
+background_mode = 2
+sky = SubResource("Sky_xou4o")
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.420522, 0.583349, 0.606951, 1)
+fog_light_energy = 0.63
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_six6e"]
 vertices = PackedVector3Array(1.6, -1.4, -1.25, 2, -1.4, -1.5, 2, -1.4, -7, 1.5, -1.4, -1.05, -7, -1.4, -7, -7, -1.4, -0.65, 1.5, -1.4, -0.65, 4.45, -1.4, -1.25, 4.55, -1.4, -0.75, 7, -1.4, -0.8, 4.1, -1.4, -1.5, 7, -1.4, -7, 4.55, -1.4, 0.8, 7, -1.4, 0.85, -7, -1.4, 0.7, 1.5, -1.4, 0.7, 2.5, 1.1, -0.5, 2.5, 1.1, 0.55, 3.55, 1.1, 0.55, 3.55, 1.1, -0.5, 1.85, -1.4, 7, 1.85, -1.4, 1.5, 1.5, -1.4, 1.1, -7, -1.4, 7, 4.45, -1.4, 1.3, 4.1, -1.4, 1.55, 7, -1.4, 7)
@@ -22,6 +37,9 @@ size = Vector3(6, 6, 6)
 size = Vector3(6, 6, 6)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t5k8k")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.500003, -0.749999, 0.43301, -1.49013e-08, 0.499998, 0.866027, -0.866023, -0.433016, 0.250001, 0, 0, 0)
