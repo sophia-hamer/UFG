@@ -4,7 +4,12 @@ const IDLE = "Idle"
 const RUNNING = "Running"
 const JUMPING = "Jumping"
 const FALLING = "Falling"
-const ATTACK_TEST = "AttackTest"
+const LIGHTATTACK1 = "LightAttack1"
+const LIGHTATTACK2 = "LightAttack2"
+const LIGHTATTACK3 = "LightAttack3"
+const HEAVYATTACK1 = "HeavyAttack1"
+const HEAVYATTACK2 = "HeavyAttack2"
+const HEAVYATTACK3 = "HeavyAttack3"
 
 var player: Player
 

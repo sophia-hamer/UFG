@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 
 # Called when a state signals that it should be called
 func _transition_to_next_state(target_state_path: String, data: Dictionary = {}) -> void:
+	print("TO "+target_state_path)
 	if not has_node(target_state_path):
 		printerr(owner.name + ": Trying to transition to state " + target_state_path + " but it does not exist.")
 		return

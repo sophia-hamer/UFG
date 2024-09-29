@@ -6,7 +6,11 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	#player._animated_sprite.play("default")
 
 func update(_delta: float) -> void:
-	player._animated_sprite.set_flip_h(player.facing_direction as bool)
+	if player.facing_direction as bool:
+		player._animated_sprite.set_rotation_degrees(Vector3(0,-180,0))
+	else:
+		player._animated_sprite.set_rotation_degrees(Vector3(0,0,0))
+	#player._animated_sprite.set_flip_h(player.facing_direction as bool)
 
 func physics_update(_delta: float) -> void:
 	player.velocity.y += player.gravity * _delta
@@ -17,6 +21,6 @@ func physics_update(_delta: float) -> void:
 	elif Input.is_action_just_pressed("game_jump"):
 		finished.emit(JUMPING)
 	elif Input.is_action_just_pressed("game_attack1"):
-		finished.emit(ATTACK_TEST)
+		finished.emit(LIGHTATTACK1)
 	elif Input.is_action_pressed("game_left") or Input.is_action_pressed("game_right"):
 		finished.emit(RUNNING)
