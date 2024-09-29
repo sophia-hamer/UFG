@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=51 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -6,12 +6,19 @@
 [ext_resource type="Script" path="res://player/player_states/running.gd" id="3_ebxee"]
 [ext_resource type="Script" path="res://player/player_states/jumping.gd" id="4_wrfl3"]
 [ext_resource type="Script" path="res://player/player_states/falling.gd" id="5_cjid2"]
+[ext_resource type="Texture2D" uid="uid://ctd1ip8hrnrd" path="res://assets/player/animations/heavy_combo/heavy1.png" id="7_jpygi"]
 [ext_resource type="Texture2D" uid="uid://2384shpr1110" path="res://assets/player/animations/idle/idle1.png" id="7_t6ig1"]
+[ext_resource type="Texture2D" uid="uid://btosq5qpyrl8n" path="res://assets/player/animations/heavy_combo/heavy2.png" id="8_wbtdt"]
 [ext_resource type="Texture2D" uid="uid://cps0gut6g5rnm" path="res://assets/player/animations/idle/idle2.png" id="8_yy04r"]
+[ext_resource type="Texture2D" uid="uid://dajmnwfl1hh8o" path="res://assets/player/animations/heavy_combo/heavy3.png" id="9_1rt5w"]
 [ext_resource type="Texture2D" uid="uid://da5bepcbwbo2b" path="res://assets/player/animations/idle/idle3.png" id="9_acujg"]
 [ext_resource type="Texture2D" uid="uid://c71o6d2l0w1yj" path="res://assets/player/animations/jump/jump1.png" id="10_71bwp"]
+[ext_resource type="Texture2D" uid="uid://ob1gtlb5xblg" path="res://assets/player/animations/heavy_combo/heavy4.png" id="10_j4vav"]
 [ext_resource type="Texture2D" uid="uid://c5q8q00yq2g2a" path="res://assets/player/animations/jump/jump2.png" id="11_ckmys"]
+[ext_resource type="Texture2D" uid="uid://drlr3ghgde7wa" path="res://assets/player/animations/heavy_combo/heavy5.png" id="11_sus1x"]
 [ext_resource type="Texture2D" uid="uid://bvlbdxrk0fkj4" path="res://assets/player/animations/jump/jump3.png" id="12_mlmd2"]
+[ext_resource type="Texture2D" uid="uid://c77fldskp5r2o" path="res://assets/player/animations/heavy_combo/heavy6.png" id="12_ttfid"]
+[ext_resource type="Texture2D" uid="uid://dwuj7qhvvjkwd" path="res://assets/player/animations/heavy_combo/heavy7.png" id="13_532qd"]
 [ext_resource type="Texture2D" uid="uid://tw3q31cljyjo" path="res://assets/player/animations/jump/jump4.png" id="13_sinmp"]
 [ext_resource type="Texture2D" uid="uid://oj4l37jcvekb" path="res://assets/player/animations/jump/jump5.png" id="14_d2j6h"]
 [ext_resource type="Texture2D" uid="uid://dw65mvsmgxdhj" path="res://assets/player/animations/light_combo/punch1.png" id="15_ryetj"]
@@ -142,46 +149,6 @@ tracks/2/keys = {
 "values": []
 }
 
-[sub_resource type="Animation" id="Animation_ugt5h"]
-resource_name = "player_walk_forward"
-loop_mode = 1
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [&"player_walk_forward"]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("StateMachine")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
-
 [sub_resource type="Animation" id="Animation_kcy2n"]
 resource_name = "player_light_1"
 step = 0.0167
@@ -299,9 +266,89 @@ tracks/2/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_ugt5h"]
+resource_name = "player_walk_forward"
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_walk_forward"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_gkjml"]
+resource_name = "player_heavy_1"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.566667, 0.583333, 0.883333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"player_heavy_1"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t8h1h"]
 _data = {
 "RESET": SubResource("Animation_vy00k"),
+"player_heavy_1": SubResource("Animation_gkjml"),
 "player_idle": SubResource("Animation_asxag"),
 "player_jump": SubResource("Animation_swl46"),
 "player_light_1": SubResource("Animation_kcy2n"),
@@ -312,6 +359,32 @@ _data = {
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ideqm"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jpygi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wbtdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1rt5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j4vav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sus1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ttfid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_532qd")
+}],
+"loop": true,
+"name": &"player_heavy_1",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_t6ig1")
