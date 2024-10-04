@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jjimwku7o3ay"
-path.s3tc="res://.godot/imported/walkf3.png-6ac3099df28587c979ee367cbc18eb21.s3tc.ctex"
+uid="uid://cc402py2tnp81"
+path.s3tc="res://.godot/imported/dash3.png-797f7c6ad842b98d1fa1f6d64196cd84.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/player/animations/walk_forward/walkf3.png"
-dest_files=["res://.godot/imported/walkf3.png-6ac3099df28587c979ee367cbc18eb21.s3tc.ctex"]
+source_file="res://assets/player/animations/dash/dash3.png"
+dest_files=["res://.godot/imported/dash3.png-797f7c6ad842b98d1fa1f6d64196cd84.s3tc.ctex"]
 
 [params]
 
