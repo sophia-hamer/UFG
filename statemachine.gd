@@ -2,6 +2,7 @@ class_name StateMachine extends Node
 
 @export var initial_state: State = null
 @onready var player := owner as Player
+@onready var right := true
 
 @onready var state: State = (func get_initial_state() -> State:
 	return initial_state if initial_state != null else get_child(0)
@@ -9,6 +10,7 @@ class_name StateMachine extends Node
 
 # Called on spawn
 func _ready() -> void:
+	
 	await owner.ready
 	for state_node: State in find_children("*", "State"):
 		state_node.finished.connect(_transition_to_next_state)
@@ -18,6 +20,8 @@ func _ready() -> void:
 		player._health_bar.visible = false
 	else:
 		player._health_bar.value = player.HP
+	if RandomNumberGenerator.new().randi()%2==0:
+		right = false
 	
 # Called when input
 func _unhandled_input(event: InputEvent) -> void:
@@ -46,7 +50,8 @@ func _process(delta: float) -> void:
 		var other := get_node("../../Real") as Player
 		var diff := (other.position - (player.position + Vector3(-1,0,0)))
 		var diff2 := (other.position - (player.position + Vector3(1,0,0)))
-		if(diff2.length()<diff.length()):
+		#if(diff2.length()<diff.length()):
+		if(right):
 			diff = diff2
 		if abs(diff.x)<=0.25 and abs(diff.z)<=0.25:
 			if player.position.x >= other.position.x:

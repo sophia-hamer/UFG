@@ -16,6 +16,7 @@ const SLIDE = "Slide"
 const HURT = "Hurt"
 const BIGHURT = "BigHurt"
 const DEAD = "Dead"
+const SUPER = "Super"
 
 var player: Player
 

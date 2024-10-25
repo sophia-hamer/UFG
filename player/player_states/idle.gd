@@ -21,7 +21,7 @@ func handle_input(_event: InputEvent) -> void:
 	elif _event.is_action_pressed("game_attack2"):
 		finished.emit(HEAVYATTACK1)
 	elif _event.is_action_pressed("game_slide"):
-		finished.emit(SLIDE)
+		finished.emit(SUPER)
 
 func physics_update(_delta: float) -> void:
 	player.velocity.y += player.gravity * _delta

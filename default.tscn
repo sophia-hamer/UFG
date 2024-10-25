@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnraopur1wspg"]
+[gd_scene load_steps=13 format=3 uid="uid://cnraopur1wspg"]
 
 [ext_resource type="PackedScene" uid="uid://ci6tcdtnvfkkl" path="res://player.tscn" id="1_hwf7o"]
 [ext_resource type="PackedScene" uid="uid://b5mfm0gpmoxr4" path="res://objects/breakable_box/breakable_box.tscn" id="2_0dyt5"]
+[ext_resource type="PackedScene" uid="uid://bv3jrko0bdtt4" path="res://bigmode.tscn" id="3_nuwk0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_me3qv"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,6 +37,8 @@ size = Vector3(6, 6, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0fen4"]
 size = Vector3(6, 6, 6)
 
+[sub_resource type="PrismMesh" id="PrismMesh_lr1x4"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -46,13 +49,17 @@ transform = Transform3D(0.500003, -0.749999, 0.43301, -1.49013e-08, 0.499998, 0.
 shadow_enabled = true
 
 [node name="Real" parent="." instance=ExtResource("1_hwf7o")]
+collision_layer = 2
+collision_mask = 1
+HP = 20.0
+HP_max = 20.0
 
-[node name="CharacterBody3D_BOT" parent="." instance=ExtResource("1_hwf7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_hwf7o")]
+collision_layer = 2
+collision_mask = 1
 is_ai = true
 speed = 1.5
 speed_z = 1.5
-HP = 2.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -3)
@@ -147,3 +154,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -9, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2.5, -8)
+
+[node name="Area3D" parent="." instance=ExtResource("3_nuwk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2, 3)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+visibility_aabb = AABB(0, 0, 0, 1, 1, 1)
+mesh = SubResource("PrismMesh_lr1x4")
+gravity = Vector3(0, 0, 0)
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.25
+scale_amount_max = 0.5

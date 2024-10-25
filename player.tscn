@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://ci6tcdtnvfkkl"]
+[gd_scene load_steps=123 format=3 uid="uid://ci6tcdtnvfkkl"]
 
 [ext_resource type="Script" path="res://statemachine.gd" id="1_tte72"]
 [ext_resource type="Script" path="res://player/player_script.gd" id="1_w7i0i"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://8t44qym2flkl" path="res://assets/player/animations/heavy_combo/ora2.png" id="9_eq08x"]
 [ext_resource type="Script" path="res://player/player_states/player_heavy_2.gd" id="9_eth44"]
 [ext_resource type="Texture2D" uid="uid://c71o6d2l0w1yj" path="res://assets/player/animations/jump/jump1.png" id="10_71bwp"]
+[ext_resource type="Script" path="res://player/player_states/player_super.gd" id="10_kks7h"]
 [ext_resource type="Texture2D" uid="uid://b0yo4kn78c37g" path="res://assets/player/animations/heavy_combo/ora3.png" id="10_qoybc"]
 [ext_resource type="Script" path="res://player/player_states/player_heavy_3.gd" id="10_rrcv1"]
 [ext_resource type="Texture2D" uid="uid://c5q8q00yq2g2a" path="res://assets/player/animations/jump/jump2.png" id="11_ckmys"]
@@ -98,7 +99,20 @@
 [ext_resource type="Texture2D" uid="uid://bx3dvnwhnljk1" path="res://assets/player/animations/slide/slide4.png" id="82_7ql4w"]
 [ext_resource type="Texture2D" uid="uid://bbnkskmy8ngi3" path="res://assets/player/animations/slide/slide5.png" id="83_jnwoy"]
 [ext_resource type="Texture2D" uid="uid://doyvqskdtejqo" path="res://assets/player/animations/slide/slide6.png" id="84_1rw4b"]
+[ext_resource type="Texture2D" uid="uid://bwcp8lchtwjq" path="res://assets/player/animations/super/superp1.png" id="95_1t6ps"]
+[ext_resource type="Texture2D" uid="uid://mus4y2rfrjkp" path="res://assets/player/animations/super/superp2.png" id="96_28xll"]
+[ext_resource type="Texture2D" uid="uid://dgol7mm5clj6s" path="res://assets/player/animations/super/superp3.png" id="97_cbh0c"]
+[ext_resource type="Texture2D" uid="uid://didomyj4r6tii" path="res://assets/player/animations/super/superp4.png" id="98_4v28h"]
 [ext_resource type="Script" path="res://player/hitstop_manager.gd" id="99_l0e2a"]
+[ext_resource type="Texture2D" uid="uid://ddddm7v2hg14f" path="res://assets/player/animations/super/superp5.png" id="99_osppg"]
+[ext_resource type="Texture2D" uid="uid://buvqhcnkejiyw" path="res://assets/player/animations/super/superp6.png" id="100_muo1m"]
+[ext_resource type="Texture2D" uid="uid://bf6yrabwg0cf0" path="res://assets/player/animations/super/superp7.png" id="101_8aqm5"]
+[ext_resource type="Texture2D" uid="uid://ejcsskbf1s5" path="res://assets/player/animations/super/superp8.png" id="102_bpyun"]
+[ext_resource type="Texture2D" uid="uid://wgltfh1wpwa1" path="res://assets/player/animations/super/superp9.png" id="103_emly8"]
+[ext_resource type="Texture2D" uid="uid://bby5eb4miyry2" path="res://assets/player/animations/super/superp10.png" id="104_ousp8"]
+[ext_resource type="Texture2D" uid="uid://c4v368n4w4q11" path="res://assets/player/animations/super/superp11.png" id="105_pc3hg"]
+[ext_resource type="Texture2D" uid="uid://cs643og6m0tgw" path="res://assets/player/animations/super/superp12.png" id="106_odasu"]
+[ext_resource type="Texture2D" uid="uid://hx8tn10drfw2" path="res://assets/player/animations/super/superp13.png" id="107_nnoin"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g2b7g"]
 size = Vector3(0.75, 2, 0.5)
@@ -417,6 +431,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("95_1t6ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_28xll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_cbh0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_4v28h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_osppg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_muo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_8aqm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_bpyun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_emly8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ousp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_pc3hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_odasu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_nnoin")
+}],
+"loop": true,
+"name": &"player_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("59_fcjfc")
 }, {
 "duration": 1.0,
@@ -431,7 +489,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t287a"]
-size = Vector3(3, 2.5, 1)
+size = Vector3(1.625, 0.625, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0r4s4"]
 
@@ -447,8 +505,8 @@ size = Vector3(0.75, 1.75, 1)
 bg_color = Color(0, 0.580392, 0.168627, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 6
+collision_mask = 5
 script = ExtResource("1_w7i0i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -485,6 +543,9 @@ script = ExtResource("8_mucg4")
 
 [node name="HeavyAttack2" type="Node" parent="StateMachine"]
 script = ExtResource("9_eth44")
+
+[node name="Super" type="Node" parent="StateMachine"]
+script = ExtResource("10_kks7h")
 
 [node name="HeavyAttack3" type="Node" parent="StateMachine"]
 script = ExtResource("10_rrcv1")
@@ -533,7 +594,7 @@ script = ExtResource("19_mempw")
 [node name="HitboxDesigner" type="Node3D" parent="."]
 
 [node name="Hitbox" type="CollisionShape3D" parent="HitboxDesigner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875, 0.6875, 0)
 shape = SubResource("BoxShape3D_t287a")
 
 [node name="Grid_vis" type="Node3D" parent="."]

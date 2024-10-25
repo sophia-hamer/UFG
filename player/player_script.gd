@@ -8,12 +8,12 @@ class_name Player extends CharacterBody3D
 @export var hurt_speed := 1.0
 @export var big_hurt_speed := 2.0
 @export var gravity := -9.8*3
-@export var jump_impulse := 14.0
+@export var jump_impulse := 12.0
 @export var air_accel := 2.0
 @export var fake_root_motion := 0.0
 @export var facing_direction := 0
-@export var HP := 20.0
-@export var HP_max := 20.0
+@export var HP := 10.0
+@export var HP_max := 10.0
 
 
 @export var lock_buffer := false

@@ -7,7 +7,6 @@ func _please() -> void:
 		var newguy1 := preload("res://player.tscn").instantiate()
 		var newguy2 := preload("res://player.tscn").instantiate()
 		var rng := RandomNumberGenerator.new()
-		newguy1.position=(Vector3(rng.randf_range(-20,20),10,rng.randf_range(-20,20)))
 		newguy2.position=(Vector3(rng.randf_range(-20,20),10,rng.randf_range(-20,20)))
 		newguy1.set_name("badguy")
 		newguy2.set_name("badguy")
@@ -15,6 +14,12 @@ func _please() -> void:
 		newguy2.is_ai = true
 		get_tree().current_scene.add_child(newguy1)
 		get_tree().current_scene.add_child(newguy2)
+		if RandomNumberGenerator.new().randi()%4==0:
+			var newbigmode := preload("res://bigmode.tscn").instantiate()
+			newbigmode.set_name("bigmode")
+			newbigmode.position=player.position
+			get_tree().current_scene.add_child(newbigmode)
+			
 		player.queue_free()
 
 func _ready() -> void:
