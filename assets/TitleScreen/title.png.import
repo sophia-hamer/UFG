@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxmilotek1ky8"
-path="res://.godot/imported/walkf3.png-e78f99871a550278c7bf3f5cab627bca.ctex"
+path="res://.godot/imported/title.png-d2ee059039daee81ca846abb681bc79a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walkf3.png"
-dest_files=["res://.godot/imported/walkf3.png-e78f99871a550278c7bf3f5cab627bca.ctex"]
+source_file="res://assets/TitleScreen/title.png"
+dest_files=["res://.godot/imported/title.png-d2ee059039daee81ca846abb681bc79a.ctex"]
 
 [params]
 
