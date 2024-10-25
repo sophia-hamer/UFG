@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cucfrgie02udb"
+path="res://.godot/imported/Seq1.15 whoosh #1 96 HK1.wav-7bf046f619fdcc40258fbd5ac71c75a4.sample"
+
+[deps]
+
+source_file="res://assets/Audio/NoizBoy - Hong Kong Action Kit - Hit Kit #1/Seq1.15 whoosh #1 96 HK1.wav"
+dest_files=["res://.godot/imported/Seq1.15 whoosh #1 96 HK1.wav-7bf046f619fdcc40258fbd5ac71c75a4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
